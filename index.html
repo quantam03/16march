@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src=""></script>
+  </head>
+  <body>
+    <h1>JavaScript Class 1</h1>
+
+    <!-- Whats is Javascript?
+What is JavaScript Runtime Environment?
+What is JavaScript Engine?
+What is Execution in Javascript? -->
+
+    <h3>Q1.What is JavaScript</h3>
+    <p>
+      JavaScript is a scripting language that has a wide range of applications.
+      JavaScript was previously used mainly for making webpages interactive such
+      as form validation, animation, etc. Nowadays, JavaScript is also used in
+      many other areas such as server-side development, mobile app development
+      and so on.
+      <br />
+    </p>
+    <hr />
+
+    <h3>What is Js runtime environment?</h3>
+    <pre>
+  The runtime environment is what makes JavaScript code work, and in a browser in consists of the JS engine, a lot of Web APIs, a callback queue and the event loop.
+  The JS engine translates source code into machine code that allows a computer to perform specific tasks at the hardware level.
+  Web APIs extend the JS language and push callback functions to the callback queue once actions are complete and data has been received
+  The callback queue stores callback functions in order, ready to be executed.
+  The event loop is constantly monitoring the call stack and the callback queue; if the call stack is empty it will move the callback function at the front of the queue to the call stack, scheduling it for execution.</pre
+    >
+    <p>
+      <img
+        style="height: 500px; width: 400px; margin-left: 300px"
+        src="https://miro.medium.com/max/700/1*zeKjWCjyAGZ9JN4fvnWsiA.png"
+        alt="runtime environment"
+      />
+    </p>
+
+    <hr />
+    <h3>What is JS Engine?</h3>
+    <p>
+      JavaScript is a multi-paradigm prototype-based language, which uses
+      JavaScript Engine such as Chrome’s V8 engine Firefox SpiderMonkey engine
+      and etc. They convert the high level code into machine-readable code which
+      lets computer to perform some specific tasks.
+      <br />
+      <img
+        style="height: 500px; width: 500px; margin-left: 300px"
+        src="https://static.tildacdn.com/tild3533-6537-4639-b961-393433393837/1_GuWInZljjvtDpdeT6O.png"
+        alt="js engine"
+      />
+    </p>
+    <hr />
+    <h3>What is Execution in JS</h3>
+    <p>
+      Let’s start with the following example:
+      <br />
+      <img
+        style="width: 100; height: 300px; margin-left: 200px"
+        src="./code.png"
+        alt=""
+      />
+      <br />
+      In this example: First, declare the x variable and initialize its value
+      with 10. Second, declare the timesTen() function that accepts an argument
+      and returns a value that is the result of multiplication of the argument
+      with 10. Third, call the timesTen() function with the argument as the
+      value of the x variable and store result in the variable y. Finally,
+      output the variable y to the Console. Behind the scene, JavaScript does
+      many things. in this tutorial, you will focus on execution contexts. When
+      the JavaScript engine executes the JavaScript code, it creates execution
+      contexts. Each execution context has two phases: the creation phase and
+      the execution phase.
+    </p>
+    <p>
+        <h3>The creation phase</h3>
+
+When the JavaScript engine executes a script for the first time, it creates the global execution context. During this phase, the JavaScript engine performs the following tasks:
+
+    Create the global object i.e., window in the web browser or global in Node.js.
+    Create the this object and bind it to the global object.
+    Setup a memory heap for storing variables and function references.
+    Store the function declarations in the memory heap and variables within the global execution context with the initial values as undefined.
+
+When the JavaScript engine executes the code example above, it does the following in the creation phase:
+
+    First, store the variables x and y and function declaration timesTen() in the global execution context.
+    Second, initialize the variables x and y to undefined.
+    
+
+    </p>
+    <img
+      style="margin-left: 50px"
+      src="https://www.javascripttutorial.net/wp-content/uploads/2019/12/javascript-execution-context-global-execution-context-in-creation-phase.png"
+      alt=""
+    />
+    <p>
+      After the creation phase, the global execution context moves to the
+      execution phase.
+    </p>
+    <br />
+    <br />
+    <h3>Execution Phase</h3>
+    <p>
+      During the execution phase, the JavaScript engine executes the code line
+      by line, assigns the values to variables, and executes the function calls.
+    </p>
+    <img
+      style="margin-left: 50px"
+      src="https://www.javascripttutorial.net/wp-content/uploads/2019/12/javascript-execution-context-global-execution-context-in-execution-phase.png"
+      alt=""
+    />
+    <p>
+        For each function call, the JavaScript engine creates a new function execution context.
+
+        The function execution context is similar to the global execution context. But instead of creating the global object, the JavaScript engine creates the arguments object that is a reference to all the parameters of the function:</p
+    >
+
+    <img
+      style="margin-left: 50px"
+      src="https://www.javascripttutorial.net/wp-content/uploads/2019/12/javascript-execution-context-function-execution-context-in-creation-phase.png"
+      alt=""
+    />
+    <br />
+    <p>
+        In our example, the function execution context creates the arguments object that references all parameters passed into the function, sets this value to the global object, and initializes the a parameter to undefined.
+
+        During the execution phase of the function execution context, the JavaScript engine assigns 10 to the parameter a and returns the result (100) to the global execution context:
+        </p
+    >
+    <img
+      style="margin-left: 50px"
+      src="https://www.javascripttutorial.net/wp-content/uploads/2019/12/javascript-execution-context-function-execution-context-in-execution-phase.png"
+      alt=""
+    />
+    <p>
+        To keep track of all the execution contexts, including the global execution context and function execution contexts, the JavaScript engine uses the call stack, which you will learn in the next tutorial.
+
+        In this tutorial, you have learned about the JavaScript execution contexts, including the global execution context and function execution contexts. 
+        </p
+    >
+
+    <script src="index.js"></script>
+  </body>
+</html>
